@@ -96,7 +96,7 @@ export default function LandingPage() {
               Unified customer data across all council systems
             </p>
             <p className="mb-12 max-w-3xl text-gray-600 text-center mx-auto">
-              IDT Governance offers a solution for detecting and removing duplicate data, ensuring clean, accurate, and reliable customer and staff records. Whether you're managing customer databases, CRM systems, or large datasets, our intelligent algorithms help you eliminate redundancy, reduce errors, and optimize efficiency.
+              IDT Governance offers a solution for detecting and removing duplicate data, ensuring clean, accurate, and reliable customer and staff records. Whether you&apos;re managing customer databases, CRM systems, or large datasets, our intelligent algorithms help you eliminate redundancy, reduce errors, and optimize efficiency.
             </p>
 
             <h2 className="mb-6 text-2xl font-bold text-[#2C3E50] text-center">
@@ -127,7 +127,7 @@ export default function LandingPage() {
             </div>
 
             <p className="mt-8 text-gray-600 text-center max-w-3xl mx-auto">
-              Enhance data quality. Streamline operations. Improve resident and business services. Contact us today to optimize your council's data management!
+              Enhance data quality. Streamline operations. Improve resident and business services. Contact us today to optimize your council&apos;s data management!
             </p>
           </div>
         </section>
