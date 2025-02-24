@@ -31,7 +31,7 @@ export default function AboutPage() {
             </p>
 
             <p className="leading-relaxed text-lg">
-              If you're uncertain about the accuracy of your NAR or the effectiveness of your data 
+              If you&apos;re uncertain about the accuracy of your NAR or the effectiveness of your data 
               management processes, our experts can audit your system, identify inconsistencies, and 
               recommend a structured data cleansing strategy. We also provide ongoing support to maintain 
               data quality and prevent future duplication.

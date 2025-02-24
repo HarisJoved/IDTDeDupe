@@ -14,7 +14,7 @@ export default function SolutionPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-[#2C3E50] mb-4">Step 1: Discovery</h2>
             <p className="mb-4">
-              During the discovery phase, a sample set of the council's Civica Authority NAR data is analyzed to identify data quality issues and their root causes. Based on this analysis, metrics for data cleansing and deduplication are finalized, and the following comprehensive reports are generated for the council's Authority NAR data:
+              During the discovery phase, a sample set of the council&apos;s Civica Authority NAR data is analyzed to identify data quality issues and their root causes. Based on this analysis, metrics for data cleansing and deduplication are finalized, and the following comprehensive reports are generated for the council&apos;s Authority NAR data:
             </p>
             <ul className="list-disc list-inside mb-4 ml-4">
               <li>Data Quality Report</li>
@@ -46,7 +46,7 @@ export default function SolutionPage() {
             },
             {
               title: "Step 4: Automated NAR Cleansing and Maintenance",
-              content: "After a thorough review of the initial NAR cleansing in the NAR Staging Environment, the cleansed NAR can be synchronized with the Authority ERP either manually or through automated processes. Once the initial cleansing is complete, routine maintenance processes can be configured to continuously cleanse NAR data within the Authority. This maintenance process can run on a daily, weekly, or monthly schedule to address data quality issues within the council's NAR."
+              content: "After a thorough review of the initial NAR cleansing in the NAR Staging Environment, the cleansed NAR can be synchronized with the Authority ERP either manually or through automated processes. Once the initial cleansing is complete, routine maintenance processes can be configured to continuously cleanse NAR data within the Authority. This maintenance process can run on a daily, weekly, or monthly schedule to address data quality issues within the council&apos;s NAR."
             },
             {
               title: "Step 5: Automated NAR Merging",
@@ -57,7 +57,7 @@ export default function SolutionPage() {
               content: (
                 <>
                   <p className="mb-4">
-                    In this phase, we integrate resident-facing systems within the council's infrastructure, using the cleaned Authority NAR as a centralized reference point. Councils often rely on multiple systems, such as:
+                    In this phase, we integrate resident-facing systems within the council&apos;s infrastructure, using the cleaned Authority NAR as a centralized reference point. Councils often rely on multiple systems, such as:
                   </p>
                   <ul className="list-disc list-inside mb-4 ml-4">
                     <li>Attekus Bookable for bookings</li>
