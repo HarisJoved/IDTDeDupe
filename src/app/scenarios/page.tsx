@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -174,27 +174,47 @@ const caseStudies = [
 
 export default function ScenariosPage() {
   const [currentPage, setCurrentPage] = useState(0);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // Function to scroll to top of content area
+  const scrollToTop = () => {
+    if (contentRef.current) {
+      contentRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % caseStudies.length);
+    // Scroll to top after state update
+    setTimeout(scrollToTop, 10);
   };
 
   const previousPage = () => {
     setCurrentPage((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
+    // Scroll to top after state update
+    setTimeout(scrollToTop, 10);
   };
+
+  // Scroll to top whenever current page changes
+  useEffect(() => {
+    scrollToTop();
+  }, [currentPage]);
 
   const currentCase = caseStudies[currentPage];
 
   return (
     <div className="min-h-screen w-full bg-[#2C3E50]">
-      <main className="pt-20 w-full">
-        <div className="w-full max-w-4xl mx-auto px-4 py-12 text-white">
-          <h1 className="text-4xl font-bold mb-12 text-center">
+      <main className="pt-[64px] md:pt-[68px] w-full">
+        <div 
+          ref={contentRef} 
+          className="w-full max-w-4xl mx-auto px-4 py-8 sm:py-10 md:py-12 text-white"
+        >
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">
             IDT Governance Scenarios and Examples
           </h1>
 
-          <div className="space-y-8">
-            <h2 className="text-2xl font-semibold mb-6">{currentCase.title}</h2>
+          <div className="space-y-6 md:space-y-8">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4 md:mb-6">{currentCase.title}</h2>
             
             <div className="bg-white/10 p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-4">Scenario:</h3>
@@ -240,14 +260,14 @@ export default function ScenariosPage() {
             </div>
           </div>
 
-          <div className="flex justify-between items-center mt-12">
+          <div className="flex flex-col sm:flex-row justify-between items-center mt-8 sm:mt-10 md:mt-12 gap-4">
             <Button
               onClick={previousPage}
-              className="bg-white/20 hover:bg-white/30"
+              className="bg-white/20 hover:bg-white/30 w-full sm:w-auto"
             >
               <ChevronLeft className="mr-2 h-4 w-4" /> Previous Case
             </Button>
-            <div className="flex gap-2">
+            <div className="flex gap-2 my-4 sm:my-0">
               {caseStudies.map((_, index) => (
                 <div
                   key={index}
@@ -259,7 +279,7 @@ export default function ScenariosPage() {
             </div>
             <Button
               onClick={nextPage}
-              className="bg-white/20 hover:bg-white/30"
+              className="bg-white/20 hover:bg-white/30 w-full sm:w-auto"
             >
               Next Case <ChevronRight className="ml-2 h-4 w-4" />
             </Button>

@@ -9,7 +9,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "IDT Dedupe",
+  title: "Data Governor",
   description: "De-duplicate and find matches in your Excel spreadsheet or database",
   icons: {
     icon: "/images/idtlogo.jpg",

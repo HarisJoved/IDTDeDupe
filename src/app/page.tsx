@@ -23,40 +23,40 @@ export default function LandingPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Add padding to account for fixed header */}
-      <div className="pt-[72px]">
+      <div className="pt-[64px] md:pt-[68px]">
         {/* Hero Section */}
-        <section className="bg-[#2C3E50] px-4 py-16 text-white">
+        <section className="bg-[#2C3E50] px-4 py-6 md:py-10 text-white">
           <div className="container mx-auto text-center">
-            {/* Logo and Heading */}
-            <div className="flex items-center justify-center mb-6">
-              {/* Logo */}
-              <div style={{ width: '50px', height: '40px', position: 'relative', marginRight: '16px' }}>
-                <Image
-                  src="/images/idtlogo.jpg"
-                  alt="IDT Logo"
-                  fill
-                  style={{ objectFit: 'contain' }}
-                />
+            {/* Logo and Heading combined with tighter spacing */}
+            <div className="space-y-1 mb-3"> {/* Using space-y for tight vertical spacing */}
+              {/* Logo and heading in same line */}
+              <div className="flex items-center justify-center">
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40">
+                  <Image
+                    src="/images/dedupeLightMode.PNG"
+                    alt="IDT Data Governor Logo"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    priority
+                  />
+                </div>
+                <h1 className="ml-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">DATA GOVERNOR</h1>
               </div>
-
-              {/* Heading */}
-              <h1 className="text-6xl font-bold">IDT DEDUPE</h1>
+              
+              {/* Subheading directly below with minimal spacing */}
+              <p className="text-base sm:text-lg text-white mx-auto max-w-2xl mt-0">
+                De-duplicate and find matches in your Excel spreadsheet or database
+              </p>
             </div>
 
-            {/* Subheading */}
-            <p className="mb-8 max-w-2xl text-lg text-white mx-auto">
-              De-duplicate and find matches in your Excel spreadsheet or database
-            </p>
-
-            {/* Replace Video with Carousel */}
-            <div className="mx-auto max-w-3xl">
+            {/* Carousel */}
+            <div className="mx-auto max-w-3xl mt-3"> {/* Reduced top margin */}
               <div className="relative aspect-video rounded-lg bg-gray-800 overflow-hidden">
                 <button 
                   onClick={previousImage}
-                  className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 hover:bg-black/70"
+                  className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-1 sm:p-2 hover:bg-black/70"
                 >
-                  <ChevronLeft className="h-6 w-6" />
+                  <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
                 </button>
                 <Image
                   src={images[currentImage]}
@@ -67,15 +67,15 @@ export default function LandingPage() {
                 />
                 <button 
                   onClick={nextImage}
-                  className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 hover:bg-black/70"
+                  className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-1 sm:p-2 hover:bg-black/70"
                 >
-                  <ChevronRight className="h-6 w-6" />
+                  <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
                 </button>
                 <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
                   {images.map((_, index) => (
                     <div
                       key={index}
-                      className={`h-2 w-2 rounded-full ${
+                      className={`h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full ${
                         currentImage === index ? "bg-white" : "bg-white/50"
                       }`}
                     />
@@ -87,22 +87,22 @@ export default function LandingPage() {
         </section>
 
         {/* Features Section */}
-        <section className="bg-white py-20">
+        <section className="bg-white py-10 md:py-20">
           <div className="container mx-auto px-4">
-            <h1 className="mb-6 text-4xl font-bold text-[#2C3E50] text-center">
+            <h1 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold text-[#2C3E50] text-center">
               A simple tool for Master Data Management
             </h1>
-            <p className="mb-8 max-w-2xl text-lg text-gray-600 text-center mx-auto">
+            <p className="mb-4 md:mb-8 max-w-2xl text-base sm:text-lg text-gray-600 text-center mx-auto">
               Unified customer data across all council systems
             </p>
-            <p className="mb-12 max-w-3xl text-gray-600 text-center mx-auto">
+            <p className="mb-8 md:mb-12 max-w-3xl text-sm sm:text-base text-gray-600 text-center mx-auto">
               IDT Governance offers a solution for detecting and removing duplicate data, ensuring clean, accurate, and reliable customer and staff records. Whether you&apos;re managing customer databases, CRM systems, or large datasets, our intelligent algorithms help you eliminate redundancy, reduce errors, and optimize efficiency.
             </p>
 
-            <h2 className="mb-6 text-2xl font-bold text-[#2C3E50] text-center">
+            <h2 className="mb-4 md:mb-6 text-xl sm:text-2xl font-bold text-[#2C3E50] text-center">
               IDT Governance Uses
             </h2>
-            <div className="text-center grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="text-center grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6 text-sm sm:text-base">
               <div className="text-gray-600">De-duplicating customer records</div>
               <div className="text-gray-600">Combining lists of addresses</div>
               <div className="text-gray-600">Master data management</div>
@@ -209,9 +209,9 @@ export default function LandingPage() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t bg-white px-4 py-8">
+        <footer className="border-t bg-white px-4 py-6 md:py-8">
           <div className="container mx-auto">
-            <div className="grid gap-8 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
               <div>
                 <h3 className="mb-4 font-semibold">About</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
